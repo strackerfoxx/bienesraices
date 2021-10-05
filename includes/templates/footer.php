@@ -10,3 +10,7 @@
 
         <p class="copyright">Todos los derechos reservados para Stracker Foxx &copy;</p>
     </footer>
+
+    <script src="/build/js/bundle.min.js"></script>
+</body>
+</html>

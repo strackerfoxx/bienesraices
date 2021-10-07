@@ -11,6 +11,28 @@ $query = "SELECT * FROM propiedades";
 //consultar la DB
 $resultadoConsulta = mysqli_query($db, $query);
 
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = $_POST['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+
+    if($id){
+        //eliminar imagen
+
+        $query ="SELECT imagen FROM propiedades WHERE id = ${id}";
+        
+        $resultado = mysqli_query($db, $query);
+        $propiedad = mysqli_fetch_assoc($resultado);
+        unlink('../imagenes/' . $propiedad['imagen']);
+
+        // eliminar propiedad
+        $query = "DELETE FROM propiedades WHERE id = ${id}";
+        $resultado = mysqli_query($db, $query);
+        if($resultado){
+            header('Location: /admin?resultado=3');
+        }
+    }
+
+}
 
 //incluye un template
  include '../includes/templates/header.php'?>
@@ -18,9 +40,11 @@ $resultadoConsulta = mysqli_query($db, $query);
 //Mensaje condicional
 $resultado = $_GET['resultado'] ?? null;
 if( $resultado == '1'){
-    ?>
-    <h3 class="alerta-verde">Valor insertado correctamente</h3>
-    <?php
+    echo "<h3 class='alerta-verde'>Valor Creado Correctamente</h3>";
+} else if( $resultado == '2'){
+    echo "<h3 class='alerta-verde'>Valor Actualizado Correctamente</h3>";
+} else if( $resultado == '3'){
+    echo "<h3 class='alerta-verde'>Valor Eliminado Correctamente</h3>";
 }
 
 ?>
@@ -50,8 +74,14 @@ if( $resultado == '1'){
                 <td><img src="/imagenes/<?php echo $propiedad['imagen']; ?>" class="imagen-tabla"></td>
                 <td>$<?php echo $propiedad['precio']; ?></td>
                 <td>
-                    <a href="#"class="boton-rojo-block">Eliminar</a>
-                    <a href="#"class="boton-amarillo-block">Actualizar</a>
+                    <form method="POST" class="w-100">
+
+                    <input type="hidden" name="id" value="<?php echo $propiedad['id']; ?>" />
+
+                        <input type="submit" class="boton-rojo-block" value="Eliminar">
+                    </form>
+                    <a href="propiedades/actualizar.php?id=<?php echo $propiedad['id'];?>
+                    "class="boton-amarillo-block">Actualizar</a>
                 </td>
             </tr>
             <?php endwhile; ?>

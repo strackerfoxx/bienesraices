@@ -32,96 +32,12 @@
     <section class="seccion contenedor">
         <h2>Casas y Departamentos en Venta</h2>
 
-        <div class="contenedor-anuncios">
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="build/img/anuncio1.jpg" type="image/webp">
-                    <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio1">
-                </picture>
+            <?php 
 
-                <div class="contenido-anuncio">
-                    <h3>house lake</h3>
-                    <p>luxury home located in the best locations in the united states</p>
-                    <p class="precio">3,000,000</p>
+            $limite = 3;
 
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="bathroom's">
-                            <p>3</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="bedroom's">
-                            <p>4</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="parking's">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        See Property 
-                    </a>
-                </div> <!--Contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="build/img/anuncio2.jpg" type="image/webp">
-                    <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio1">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>house with luxury finishes</h3>
-                    <p>luxury home located in the best locations in the united states</p>
-                    <p class="precio">2,000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="bathroom's">
-                            <p>3</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="bedroom's">
-                            <p>4</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="parking's">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        See Property 
-                    </a>
-                </div> <!--Contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="build/img/anuncio3.jpg" type="image/webp">
-                    <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio1">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>lhouse with pool</h3>
-                    <p>luxury home located in the best locations in the united states</p>
-                    <p class="precio">3,000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="bathroom's">
-                            <p>3</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="bedroom's">
-                            <p>4</p>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="parking's">
-                            <p>3</p>
-                        </li>
-                    </ul>
-
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        See Property 
-                    </a>
-                </div> <!--Contenido-anuncio-->
-            </div><!--anuncio-->
-
-
-        </div><!--Contenedor-anuncio-->
+            include 'includes/templates/anuncios.php'
+            ?>
 
         <div class="alinear-derecha">
             <a href="anuncios.html" class="boton-verde">Ver todas</a>

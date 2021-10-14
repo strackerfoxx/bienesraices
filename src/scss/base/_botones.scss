@@ -4,6 +4,8 @@
 
 .boton-amarillo-block {
     @include boton($amarillo, block);
+    width: 100%;
+    border: 0px;
 }
 
 .boton-verde {
